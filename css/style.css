@@ -1,0 +1,1251 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Header */
+
+.container {
+  width: 100%;
+  height: 90px;
+  background-position: center;
+  background-size: cover;
+  min-height: 0px; 
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1; 
+}
+
+.container_con{
+	height: 50%
+}
+
+.container_con::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  z-index: -1;
+}
+
+.logo {
+	width: 130px;
+	cursor: pointer;
+	margin-left: 50px
+}
+
+.nav {
+	background: rgb(0, 0, 0);
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+}
+.navbar {
+	width: 100%;
+	margin: auto;
+	padding: 10px 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.nav-menu {
+	display: flex;
+	list-style: none;
+}
+
+.nav-menu-item {
+	width: max-content;
+}
+
+.navbar ul li {
+	list-style: none;
+	display: inline-block;
+	margin: 20px;
+	margin-right: 35px;
+ 	position: relative;
+}
+
+.navbar ul li a {
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+	font-family: 'Lato', sans-serif;
+  	font-size: 1.2rem;
+}
+
+.navbar ul li ::before {
+  content: "";
+  height: 3px;
+  width: 0%;
+  background: rgb(255, 255, 255);
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  transition: 0.4s ease-out;
+}
+
+.navbar ul li :hover::before {
+  width: 100%;
+}
+
+.navbar-nav {
+	margin-right: 30px
+}
+
+.nav-toggle {
+	color: rgb(255, 255, 255);
+	background: none;
+	border: none;
+	font-size: 30px;
+	padding: 0 20px;
+	line-height: 60px;
+	cursor: pointer;
+	display: none;
+}
+
+/* BANNER */
+
+.banner {
+	width: 100%;
+	height: 600px;
+	animation: banner 10s infinite linear alternate;
+	background-size: 100% 100%;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: -1;
+}
+
+@keyframes banner {
+	0%, 20% {
+		background-image: url("../img/banner1.jpg")
+	}
+	25%, 45% {
+		background-image: url("../img/banner2.png")
+	}
+	50%, 70% {
+		background-image: url("../img/banner3.jpg")
+	}
+	75%, 100% {
+		background-image: url("../img/banner4.jpg")
+	}
+}
+
+.capa {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.7);
+}
+
+.info {
+	z-index: 1;
+	width: 100%;
+	max-width: 550px;
+	text-align: center;
+}
+
+.info h1 {
+	color: white;
+	margin-bottom: 20px;
+	letter-spacing: 1px;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 50px;
+}
+
+.info p {
+	color: #c7c7c7;
+	line-height: 1.7;
+	margin-bottom: 30px;
+}
+
+/* Configuracion normal */
+
+.contenedor {
+    padding: 40px 0;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.titulo {
+	color: #000000;
+    text-align: center;
+    margin-bottom: 40px;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 35px;
+}
+
+p {
+	color: #000000;
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+	font-weight: 300;
+}
+
+a {
+	color: #ffffff;
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	font-size: 20px;
+}
+
+/* SECCION ¿Qué es DGD?*/
+
+.contenedor_diseñografico {
+	display: flex;
+    justify-content: space-evenly;
+}
+
+.imagen-salon-dgd {
+	width: 40%;
+}
+
+.que-es-dgd .contenido-textos {
+	width: 48%;
+}
+
+.contenido-textos p{
+    padding: 55px 0px 30px 15px;
+    text-align: justify;
+}
+
+.contenido-textos a {
+	text-decoration: none;
+	background: #FF1388;
+	padding: 16px 37px;
+	display: inline-block;
+	border-radius: 50px;
+	margin-left: 170px;
+}
+
+/* SECCION profesores*/
+
+.profesores{
+    background: rgb(224, 224, 224);
+}
+
+.galeria-port{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.imagen-port{
+    width: 24%;
+    margin-bottom: 10px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .7);
+}
+
+.imagen-port > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hover-galeria{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background: hsla(273,91%,27%, 0.7);
+    transition: transform .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hover-galeria img{
+    width: 50px;
+}
+
+.hover-galeria p{
+    color: rgb(255, 255, 255);
+	text-align: center;
+}
+
+.imagen-port:hover .hover-galeria{
+    transform: scale(1);
+}
+
+/* SECCION mapa curricular*/
+
+.informacion {
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+	width: 100%;
+	max-width: 2000px;
+	margin: auto;
+	overflow: hidden;
+}
+
+.card h4 {
+	margin: 10px;
+	color: #ffffff;
+	line-height: 1.2px;
+	margin-bottom: 40px;
+	font-family: 'Lato', sans-serif;
+	font-size: 30px;
+}
+.card a {
+	text-decoration: none;
+	background: #FF1388;
+	padding: 16px 37px;
+	display: inline-block;
+	border-radius: 50px;
+} 
+
+.cards {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.cards .card {
+	background: #1bafe9;
+	display: flex;
+	width: 46%;
+	height: 200px;
+	align-items: center;
+	justify-content: space-evenly;
+	border-radius: 5px;
+	box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.7);
+}
+
+.cards .card img {
+	margin: 60px;
+	width: 130px;
+	height: 130px;
+	object-fit: cover;
+	border: 3px solid #fff;
+    border-radius: 50%;
+    display: block;
+}
+
+.cards .card > .contenido-texto-card{
+    width: 70%;
+    color: #fff;
+}
+
+.cards .card > .contenido-texto-card p{
+    padding-top: 20px;
+}
+
+/*  SECCION novedades */
+
+.about-novedades{
+    background: rgb(224, 224, 224);
+    padding-bottom: 35px;
+}
+
+.novedades-cont{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.novedades-ind{
+    width: 28%;
+    text-align: center;
+}
+
+.novedades-ind img{
+    width: 90%;
+}
+
+.novedades-ind h3{
+    margin: 10px 0;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 20px;
+}
+
+.novedades-ind p{
+    text-align: justify;
+}
+
+/* Footer */
+
+.footer{
+    position: relative;
+	z-index: -1;
+    --padding-container: 160px 0 50px;
+}
+
+.footer::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: rgb(224, 224, 224);
+    top: 0;
+    left: 0;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.footer__contact{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.1px;
+    place-items:center;
+    margin-bottom: -50px;
+}
+
+.footer__texts{
+	margin: 100px;
+}
+
+.titulo_footer{
+	font-size: 35px;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.footer__copy{
+    margin: 25px 0;
+    font-weight: 300;
+	font-family: 'Lato', sans-serif;
+	font-size: 20px;
+}
+
+.footer__social{
+    display: flex;
+    padding-top: 10px;
+    flex-wrap: wrap;
+}
+
+.footer__link{
+    width: 60px;
+    height: 60px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__icon{
+    width: 30px;
+}
+
+.footer__picture{
+    margin: 0;
+	justify-content:left;
+}
+
+.footer__img{
+    width: 100%;
+}
+
+.footer__copyright{
+    padding-top: 30px;
+	padding-bottom: 30px;
+    border-top: 2px solid #000000;
+    text-align: center;
+	font-family: 'Lato', sans-serif;
+	font-size: 17px;
+}
+
+.footer__copyright::after{
+    content: " gutierrez.valdez.esme@gmail.com";
+}
+
+/* pc minimo */ 
+
+@media (max-width: 1000px) {
+
+	/* Navegacion*/
+
+	.container {
+		width: 100%;
+		height: 65px;
+		background-position: center;
+		background-size: cover;
+		min-height: 0px; 
+		background-repeat: no-repeat;
+		position: relative;
+		z-index: 1; 
+	}
+
+    .logo {
+		width: 100px;
+		cursor: pointer;
+		margin-left: 25px
+    }
+
+	.nav-menu {
+		flex-direction: column;
+		align-items:flex-start;
+		margin-right: 20px;
+		background-color: black;
+		position: fixed;
+		left: 100%;
+		top: 60px;
+		width: 40%;
+		padding: 40px 0;
+		height: calc(100% - 60px);
+		overflow-y: auto;
+		transition: left 0.3s;
+	}
+	
+	.navbar {
+	    width: 100%;
+	    margin: auto;
+		padding: 4px 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.nav-menu-item {
+		width: max-content;
+	}
+	
+	.navbar ul li {
+		list-style: none;
+		display: inline-block;
+		margin: 20px;
+		margin-right: 35px;
+		position: relative; 
+	}
+
+	.navbar ul li a {
+		text-decoration: none;
+		color: white;
+		font-family: sans-serif;
+		font-size: 1.2rem;
+	}
+	
+	.navbar ul li ::before {
+		content: "";
+		height: 3px;
+		width: 0%;
+		background: white;
+		position: absolute;
+		left: 0;
+		bottom: -12px;
+		transition: 0.4s ease-out;
+	}
+	
+	.navbar ul li :hover::before {
+		width: 100%;
+	}
+	
+	.nav-menu-link_active{
+		background: none;
+		color:white;
+	}
+	
+	.nav-toggle {
+		display: block;
+	}
+	
+	.nav-menu_visible {
+		left: 0;
+	}
+	
+	.nav-toggle:focus:not(:focus-visible) {
+		outline: none;
+	}
+
+  /* Banner*/
+
+	.banner {
+		width: 100%;
+		height: 400px;
+		animation: banner 10s infinite linear alternate;
+		background-size: 100% 100%;
+		position: relative;
+		z-index: -1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	@keyframes banner {
+		0%, 20% {
+			background-image: url("../img/banner1.jpg")
+		}
+		25%, 45% {
+			background-image: url("../img/banner2.png")
+		}
+		50%, 70% {
+			background-image: url("../img/banner3.jpg")
+		}
+		75%, 100% {
+			background-image: url("../img/banner4.jpg")
+		}
+	}
+	
+	.capa {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: rgba(0,0,0,0.7);
+	}
+	
+	.info {
+		z-index: 1;
+		width: 100%;
+		max-width: 550px;
+		text-align: center;
+	}
+	
+	.info h1 {
+		color: white;
+		margin-bottom: 8px;
+		letter-spacing: 1px;
+		padding: 8px 15px 0px;
+		font-size: 35px;
+	}
+	
+	.info p {
+		color: #c7c7c7;
+		line-height: 1.5;
+		margin-bottom: 10px;
+		padding: 0px 28px;
+	}
+	
+	.info a {
+		color: #fff;
+		text-align: center;
+		text-decoration: none;
+		background: #FF1388;
+		padding: 8px 25px;
+		display: inline-block;
+		border-radius: 50px;
+	}
+
+	/* Configuracion normal */
+
+	.contenedor {
+		padding: 40px 0;
+		width: 100%;
+		max-width: 1000px;
+		margin: auto;
+		overflow: hidden;
+	}
+
+	.titulo {
+		color: #000000;
+		text-align: center;
+		margin-bottom: 40px;
+		font-family: 'Quicksand', sans-serif;
+		font-size: 35px;
+	}
+
+	p {
+		color: #000000;
+		font-family: 'Lato', sans-serif;
+		font-size: 20px;
+		font-weight: 300;
+	}
+
+	a {
+		color: #ffffff;
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		font-size: 20px;
+	}
+
+	/* SECCION mapacurricular*/
+
+    .informacion {
+        background-size: cover;
+    	background-attachment: fixed;
+    	text-align: center;
+		width: 100%;
+		max-width: 2000px;
+		margin: auto;
+		overflow: hidden;
+	}
+
+	.card h4 {
+		margin: 10px 0px 20px 0px;
+		color: #ffffff;
+		line-height: 1.2px;
+		font-size: 22px;
+		margin-bottom: 40px;
+	}
+
+	.card a {
+		color: #fff;
+		text-decoration: none;
+		background: #FF1388;
+		padding: 14px 35px;
+		display: inline-block;
+		border-radius: 50px;
+	} 
+
+	.cards {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	.cards .card {
+		background: #12c2e9;
+		display: flex;
+		width: 46%;
+		height: 200px;
+		align-items: center;
+		justify-content: space-evenly;
+		border-radius: 5px;
+		box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+	}
+
+	.cards .card img {
+		margin: 16px;
+		width: 130px;
+		height: 130px;
+		object-fit: cover;
+		border: 3px solid #fff;
+		border-radius: 50%;
+		display: block;
+	}
+
+	.cards .card > .contenido-texto-card{
+		width: 60%;
+		color: #fff;
+	}
+
+	.cards .card > .contenido-texto-card p{
+		font-weight: 300;
+		padding-top: 20px;
+	}
+
+	/*  SECCION novedades */
+
+	.contenedor {
+		padding-right: 20px;
+    	padding-left: 20px;
+	}
+
+	.about-novedades{
+		background: rgb(224, 224, 224);
+		padding-bottom: 5px;
+	}
+
+	.novedades-cont{
+		display:flex;
+		justify-content: space-between;
+		align-items: center;
+		margin: 0px 20px 0px 20px;
+	}
+
+	.novedades-ind{
+		width: 28%;
+		text-align: center;
+	}
+
+	.novedades-ind img{
+		width: 60%;
+	}
+
+	.novedades-ind h3{
+		margin: 10px 0;
+	}
+
+	.novedades-ind p{
+		text-align: justify;
+	}
+
+	/* Footer*/
+
+    .footer__contact{
+		grid-template-columns: 1fr;
+    }
+
+    .footer__texts{
+		margin: 0px 0px 70px 0px;
+		order: 1;
+		--align-title: center;
+    }
+
+    .footer__social{
+		justify-content: space-evenly;
+    }
+
+	.footer__img{
+		padding: 60px 0px 0px 0px;
+		justify-content:left;
+	}
+}
+
+/*telefono*/ 
+
+@media (max-width: 500px) {
+
+	/* Navegacion*/
+
+	.container {
+		width: 100%;
+		height: 70px;
+		background-position: center;
+		background-size: cover;
+		min-height: 0px; 
+		background-repeat: no-repeat;
+		position: relative;
+		z-index: 1; 
+	}
+
+    .logo {
+		width: 80px;
+		cursor: pointer;
+		margin-left: 25px
+    }
+
+	.nav-menu {
+		flex-direction: column;
+		align-items:flex-start;
+		margin-right: 20px;
+		background-color: black;
+		position:fixed;
+		left: 100%;
+		top: 60px;
+		width: 40%;
+		padding: 40px 0;
+		height: calc(100% - 60px);
+		overflow-y: auto;
+		transition: left 0.3s;
+	}
+	
+	.navbar {
+	    width: 100%;
+	    margin: auto;
+		padding: 5px 0;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.nav-menu-item {
+		width: max-content;
+	}
+	
+	.navbar ul li {
+		list-style: none;
+		display: inline-block;
+		margin: 20px;
+		margin-right: 35px;
+		position: relative; 
+	}
+
+	.navbar ul li a {
+		text-decoration: none;
+		color: white;
+		font-family: sans-serif;
+		font-size: 0.8rem;
+	}
+	
+	.navbar ul li ::before {
+		content: "";
+		height: 3px;
+		width: 0%;
+		background: white;
+		position: absolute;
+		left: 0;
+		bottom: -12px;
+		transition: 0.4s ease-out;
+	}
+	
+	.navbar ul li :hover::before {
+		width: 100%;
+	}
+	
+	.nav-menu-link_active{
+		background: none;
+		color:white;
+	}
+	
+	.nav-toggle {
+		display: block;
+	}
+	
+	.nav-menu_visible {
+		left: 0;
+	}
+	
+	.nav-toggle:focus:not(:focus-visible) {
+		outline: none;
+	}
+
+  /* Banner*/
+
+	.banner {
+		width: 100%;
+		height: 250px;
+		animation: banner 10s infinite linear alternate;
+		background-size: 100% 100%;
+		position: relative;
+		z-index: -1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	@keyframes banner {
+		0%, 20% {
+			background-image: url("../img/banner1.jpg")
+		}
+		25%, 45% {
+			background-image: url("../img/banner2.png")
+		}
+		50%, 70% {
+			background-image: url("../img/banner3.jpg")
+		}
+		75%, 100% {
+			background-image: url("../img/banner4.jpg")
+		}
+	}
+	
+	.capa {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: rgba(0,0,0,0.7);
+	}
+	
+	.info {
+		z-index: 1;
+		width: 100%;
+		max-width: 550px;
+		text-align: center;
+	}
+	
+	.info h1 {
+		color: white;
+		margin-bottom: 10px;
+		letter-spacing: 1px;
+		font-family: 'Quicksand', sans-serif;
+		font-size: 1.7em;
+	}
+	
+	.info p {
+		color: #c7c7c7;
+		line-height: 1.7;
+	}
+
+	/* Configuracion normal */
+
+	.contenedor {
+		padding: 20px 0;
+		width: 100%;
+		max-width: 1000px;
+		margin: auto;
+		overflow: hidden;
+	}
+
+	.titulo {
+		color: #000000;
+		text-align: center;
+		margin-bottom: 20px;
+		font-family: 'Quicksand', sans-serif;
+		font-size: 1.7em;
+	}
+
+	p {
+		color: #000000;
+		font-family: 'Lato', sans-serif;
+		font-size: 100%;
+		font-weight: 300;
+	}
+
+	a {
+		color: #ffffff;
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		font-size: 100%;
+	}
+
+	/* SECCION ¿Qué es DGD?*/
+
+	.contenedor_diseñografico {
+		display: block;
+		justify-content:center;
+	}
+
+	.imagen-salon-dgd {
+		width: 70%;
+		height: 70%;
+		margin-left: 50px;
+	}
+
+	.que-es-dgd .contenido-textos {
+		width: 95%;
+	}
+
+	.contenido-textos p{
+		padding: 10px 0px 5px 16px;
+		text-align:left;
+	}
+
+	.contenido-textos a {
+		text-decoration: none;
+		background: #FF1388;
+		padding: 9px 32px;
+		display: inline-block;
+		border-radius: 50px;
+		margin-left: 120px;
+		margin-top: 10px;
+	}
+
+	/* SECCION profesores*/
+
+	.profesores{
+		background: rgb(224, 224, 224);
+	}
+
+	.galeria-port{
+		display: flex;
+		justify-content: space-evenly;
+		flex-wrap: wrap;
+	}
+
+	.imagen-port{
+		width: 40%;
+		margin-bottom: 10px;
+		overflow: hidden;
+		position: relative;
+		cursor: pointer;
+		box-shadow: 0 0 6px 0 rgba(0, 0, 0, .7);
+	}
+
+	.imagen-port > img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.hover-galeria{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		transform: scale(0);
+		background: hsla(273,91%,27%, 0.7);
+		transition: transform .5s;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	.hover-galeria img{
+		width: 50px;
+	}
+
+	.hover-galeria p{
+		color: #fff;
+		text-align: center;
+	}
+
+	.imagen-port:hover .hover-galeria{
+		transform: scale(1);
+	}
+
+	/* SECCION mapacurricular*/
+
+    .informacion {
+        background-size: cover;
+    	background-attachment:flex;
+    	text-align: center;
+		width: 100%;
+		max-width: 2000px;
+		margin: auto;
+		overflow:hidden;
+	}
+
+	.cards {
+		display: flex;
+		justify-content: space-evenly;
+	}
+
+	.cards .card {
+		background: #12c2e9;
+		display: flex;
+		width: 46%;
+		height: 150px;
+		align-items: center;
+		justify-content: space-evenly;
+		border-radius: 5px;
+		box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
+	}
+
+	.cards .card img {
+		margin: 6px;
+		width: 65px;
+		height: 65px;
+		object-fit: cover;
+		border: 1.5px solid #fff;
+		border-radius: 50%;
+		display: block;
+	}
+
+	.card h4 {
+		color: #ffffff;
+		line-height: 1.2px;
+		font-family: 'Lato', sans-serif;
+		margin-top: 0%;
+		margin-bottom: 20px;
+		text-align: center;
+		font-size: 18px;
+	}
+
+	.card a {
+		color: #fff;
+		text-decoration: none;
+		background: #FF1388;
+		padding: 5px 20px;
+		display: inline-block;
+		border-radius: 50px;
+		font-size: 13px;
+	} 
+
+	.contenido-texto-card {
+		width: 70%;
+		height: 100%;
+		align-items: center;
+		padding-top: 50px;
+		padding-right: 8px;
+	}
+
+	.cards .card > .contenido-texto-card{
+		width: 70%;
+    	color: #fff;
+	}
+
+	.cards .card > .contenido-texto-card p{
+		padding-top: 20px;
+	}
+
+	/*  SECCION novedades */
+
+	.about-novedades{
+		background: rgb(224, 224, 224);
+		padding-bottom: 25px;
+	}
+	
+	.novedades-cont{
+		display:flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	
+	.novedades-ind{
+		width: 28%;
+		text-align: center;
+	}
+	
+	.novedades-ind img{
+		width: 90%;
+	}
+	
+	.novedades-ind h3{
+		margin: 10px 0;
+		font-family: 'Quicksand', sans-serif;
+		font-size: 18px;
+		text-align: left;
+	}
+	
+	.novedades-ind p{
+		text-align: left;
+	}
+
+	/* Footer*/
+
+	.footer::before{
+		clip-path: polygon(0 0, 100% 0, 50% 50%);
+	}
+
+    .footer__contact{
+		grid-template-columns: 1fr;
+    }
+
+    .footer__texts{
+		order: 1;
+		--align-title: center;
+		margin-left: 0px;
+		padding-left: 25px;
+		padding-right: 10px;
+		margin-bottom: 55px;
+    }
+
+	.titulo_footer{
+		margin-top: 5px;
+		font-size: 1.7em;
+	}
+
+	.footer__copy{
+		margin: 15px 0;
+		font-size: 100%;
+	}
+
+    .footer__social{
+		justify-content:space-evenly;
+		display: flex;
+		padding-top: 5px;
+		padding-bottom: 10px;
+		padding-right: 10px;
+		flex-wrap:wrap;
+    }
+
+	.footer__link{
+		width: 45px;
+		height: 45px;
+		border: 1px solid rgb(0, 0, 0);
+		border-radius: 50%;
+		margin-right: 10px;
+		margin-bottom: 10px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.footer__icon{
+		width: 20px;
+	}
+
+	.footer__picture{
+		justify-content:center;
+	}
+	
+	.footer__img{
+		width: 100%;
+		padding-top: 10px;
+	}
+	
+	.footer__copyright{
+		padding-top: 15px;
+		padding-bottom: 15px;
+		border-top: 1px solid #000000;
+		text-align: center;
+		font-family: 'Lato', sans-serif;
+		font-size: 90%;
+	}
+	
+	.footer__copyright::after{
+		content: " gutierrez.valdez.esme@gmail.com";
+	}
+}
